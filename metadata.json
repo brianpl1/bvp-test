@@ -1,0 +1,6 @@
+{
+  "name": "BVP - Beyond Value Products",
+  "description": "BVP Trading & Manufacturing Co., Ltd - Chuyên sản xuất quần áo thời trang, đồng phục, balo túi xách, thú nhồi bông, mền gối và gia công nhập khẩu quà tặng doanh nghiệp theo yêu cầu.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
