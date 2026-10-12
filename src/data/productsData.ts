@@ -1,5 +1,11 @@
 import { ProductItem } from '../types';
 
+// Local high-fidelity images generated for BVP product lines
+const APPAREL_IMG = '/src/assets/images/bvp_apparel_production_1791819527723.jpg';
+const BAGS_IMG = '/src/assets/images/bvp_backpacks_manufacturing_1791819542614.jpg';
+const PLUSH_IMG = '/src/assets/images/bvp_plush_cushions_mascot_1791819554630.jpg';
+const GIFTS_IMG = '/src/assets/images/bvp_corporate_gift_sets_1791819566143.jpg';
+
 export const productsData: ProductItem[] = [
   // Apparel & Uniforms
   {
@@ -7,7 +13,7 @@ export const productsData: ProductItem[] = [
     name: 'Áo Polo Doanh Nghiệp CVC Cao Cấp',
     category: 'apparel',
     categoryLabel: 'Quần áo & Đồng phục',
-    image: 'https://images.unsplash.com/photo-1581655353564-df123a1eb820?auto=format&fit=crop&w=800&q=80',
+    image: APPAREL_IMG,
     moq: '50 áo',
     material: 'Cá sấu CVC 65/35 co giãn 4 chiều (230gsm)',
     productionTime: '7 - 10 ngày',
@@ -21,7 +27,7 @@ export const productsData: ProductItem[] = [
     name: 'Áo Thun Sự Kiện Cotton Compact 100%',
     category: 'apparel',
     categoryLabel: 'Quần áo & Đồng phục',
-    image: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80',
+    image: APPAREL_IMG,
     moq: '50 áo',
     material: '100% Cotton Compact chải kỹ mềm mát (250gsm)',
     productionTime: '5 - 7 ngày',
@@ -34,7 +40,7 @@ export const productsData: ProductItem[] = [
     name: 'Áo Khoác Gió Đồng Phục 2 Lớp Chống Thấm',
     category: 'apparel',
     categoryLabel: 'Quần áo & Đồng phục',
-    image: 'https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=800&q=80',
+    image: APPAREL_IMG,
     moq: '50 áo',
     material: 'Vải dù Micro trượt nước cao cấp, lót lụa/lưới thoáng khí',
     productionTime: '8 - 12 ngày',
@@ -48,7 +54,7 @@ export const productsData: ProductItem[] = [
     name: 'Balo Laptop Doanh Nghiệp Chống Sốc BVP-Pro',
     category: 'bags',
     categoryLabel: 'Balo & Túi xách',
-    image: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&q=80',
+    image: BAGS_IMG,
     moq: '100 cái',
     material: 'Vải Dù 1680D Oxford trượt nước, đệm mút EVA 10mm',
     productionTime: '10 - 14 ngày',
@@ -62,7 +68,7 @@ export const productsData: ProductItem[] = [
     name: 'Túi Canvas Bố Dày Eco-Friendly Thương Hiệu',
     category: 'bags',
     categoryLabel: 'Balo & Túi xách',
-    image: 'https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=80',
+    image: BAGS_IMG,
     moq: '100 cái',
     material: 'Vải Canvas bố mộc tự nhiên 12oz bền chắc',
     productionTime: '5 - 8 ngày',
@@ -75,7 +81,7 @@ export const productsData: ProductItem[] = [
     name: 'Túi Trống Du Lịch Thể Thao Đa Năng',
     category: 'bags',
     categoryLabel: 'Balo & Túi xách',
-    image: 'https://images.unsplash.com/photo-1547949003-9792a18a2601?auto=format&fit=crop&w=800&q=80',
+    image: BAGS_IMG,
     moq: '100 cái',
     material: 'Vải dù 900D Polyester phủ PU chống thấm nước',
     productionTime: '10 - 15 ngày',
@@ -89,7 +95,7 @@ export const productsData: ProductItem[] = [
     name: 'Thú Nhồi Bông Mascot Linh Vật Thương Hiệu',
     category: 'plush',
     categoryLabel: 'Gấu bông & Mền gối',
-    image: 'https://images.unsplash.com/photo-1559454403-b8fb88521f11?auto=format&fit=crop&w=800&q=80',
+    image: PLUSH_IMG,
     moq: '100 con',
     material: 'Vải nhung Spandex 4 chiều siêu mịn, bông bi 7D tinh khiết',
     productionTime: '10 - 15 ngày',
@@ -103,7 +109,7 @@ export const productsData: ProductItem[] = [
     name: 'Gối Cổ Chữ U Văn Phòng Đệm Cao Su Non',
     category: 'plush',
     categoryLabel: 'Gấu bông & Mền gối',
-    image: 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=800&q=80',
+    image: PLUSH_IMG,
     moq: '100 cái',
     material: 'Ruột cao su non Memory Foam định hình, vỏ nhung tháo rời',
     productionTime: '7 - 10 ngày',
@@ -116,7 +122,7 @@ export const productsData: ProductItem[] = [
     name: 'Mền Nỉ Nhung Tuyết Văn Phòng Siêu Mềm',
     category: 'plush',
     categoryLabel: 'Gấu bông & Mền gối',
-    image: 'https://images.unsplash.com/photo-1580301762395-21ce84d00bc6?auto=format&fit=crop&w=800&q=80',
+    image: PLUSH_IMG,
     moq: '100 cái',
     material: 'Nỉ nhung tuyết Flannel 2 mặt siêu mịn (300gsm)',
     productionTime: '7 - 10 ngày',
@@ -130,7 +136,7 @@ export const productsData: ProductItem[] = [
     name: 'Bộ Giftset Doanh Nhân Cao Cấp BVP-VIP',
     category: 'gifts',
     categoryLabel: 'Quà tặng doanh nghiệp',
-    image: 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=800&q=80',
+    image: GIFTS_IMG,
     moq: '50 bộ',
     material: 'Bình giữ nhiệt Inox 304, sổ tay bìa da PU, bút ký kim loại',
     productionTime: '5 - 7 ngày',
@@ -144,7 +150,7 @@ export const productsData: ProductItem[] = [
     name: 'Bình Giữ Nhiệt Inox 304 Khắc Laser Logo',
     category: 'gifts',
     categoryLabel: 'Quà tặng doanh nghiệp',
-    image: 'https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=800&q=80',
+    image: GIFTS_IMG,
     moq: '50 cái',
     material: 'Inox 304 thực phẩm 2 lớp chân không, nắp báo nhiệt LED',
     productionTime: '3 - 5 ngày',
@@ -156,7 +162,7 @@ export const productsData: ProductItem[] = [
     name: 'Ô Dù Cầm Tay Tự Động 2 Chiều Chống Tia UV',
     category: 'gifts',
     categoryLabel: 'Quà tặng doanh nghiệp',
-    image: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=80',
+    image: GIFTS_IMG,
     moq: '100 cái',
     material: 'Vải Pongee tráng bạc cách nhiệt UPF 50+, khung thép dẻo',
     productionTime: '7 - 10 ngày',

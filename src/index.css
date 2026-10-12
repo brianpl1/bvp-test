@@ -1,21 +1,91 @@
 @import "tailwindcss";
 
+:root {
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+}
+
+[data-theme-font="montserrat"] {
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+}
+
+[data-theme-font="outfit"] {
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+}
+
+[data-theme-font="be-vietnam-pro"] {
+  --font-heading: 'Be Vietnam Pro', sans-serif;
+  --font-body: 'Be Vietnam Pro', sans-serif;
+}
+
+[data-theme-font="plus-jakarta-sans"] {
+  --font-heading: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
-    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: var(--font-body);
+  }
+
+  body {
+    font-family: var(--font-body);
   }
 }
 
-/* Custom gold gradient utility */
-.gold-gradient-text {
-  background: linear-gradient(135deg, #FFE28A 0%, #D4AF37 35%, #C5A059 65%, #F4D068 100%);
+/* Corporate Brand Typography */
+.font-controller, .font-heading {
+  font-family: var(--font-heading);
+  letter-spacing: 0.03em;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+/* Official BVP Brand Gradients & Accents (Page A.04) */
+/* 7 Official Brand Colors:
+   1. #653814 - Deep Chocolate Primary
+   2. #865421 - Rich Warm Bronze
+   3. #9b6b2a - Golden Caramel
+   4. #bb8b2c - Deep Metallic Gold
+   5. #dec357 - Primary Brand Gold
+   6. #f7e476 - Bright Sun Gold
+   7. #f8f18c - Soft Cream Gold Light
+*/
+.bvp-gold-text {
+  background: linear-gradient(135deg, #865421 0%, #bb8b2c 35%, #dec357 70%, #9b6b2a 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.gold-border-gradient {
-  border-image: linear-gradient(135deg, #D4AF37, #8A6D3B) 1;
+.bvp-gold-bright-text {
+  background: linear-gradient(135deg, #f7e476 0%, #dec357 50%, #bb8b2c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bvp-btn-gold {
+  background: linear-gradient(135deg, #f7e476 0%, #dec357 45%, #bb8b2c 100%);
+  color: #653814;
+  box-shadow: 0 4px 14px rgba(187, 139, 44, 0.25);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bvp-btn-gold:hover {
+  background: linear-gradient(135deg, #f8f18c 0%, #f7e476 40%, #dec357 100%);
+  box-shadow: 0 6px 20px rgba(187, 139, 44, 0.4);
+  transform: translateY(-1px);
+}
+
+.bvp-btn-gold:active {
+  transform: translateY(0);
+}
+
+/* Hairline border for clean luxury white cards */
+.bvp-border-hairline {
+  border: 1px solid #EAE3D5;
 }
 
 /* Custom scrollbar */
@@ -23,12 +93,12 @@
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #090e1a;
+  background: #FAF8F5;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
+  background: #dec357;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #c5a059;
+  background: #bb8b2c;
 }

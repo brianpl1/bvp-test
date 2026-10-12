@@ -8,7 +8,6 @@ import {
   Gift,
   ArrowRight,
   CheckCircle,
-  Sparkles,
   Layers,
 } from 'lucide-react';
 
@@ -26,37 +25,34 @@ export const BusinessAreas: React.FC<BusinessAreasProps> = ({
   const getIcon = (iconName: string) => {
     switch (iconName) {
       case 'Shirt':
-        return <Shirt className="w-6 h-6 text-amber-400" />;
+        return <Shirt className="w-6 h-6 text-[#bb8b2c]" />;
       case 'Briefcase':
-        return <Briefcase className="w-6 h-6 text-amber-400" />;
+        return <Briefcase className="w-6 h-6 text-[#bb8b2c]" />;
       case 'Smile':
-        return <Smile className="w-6 h-6 text-amber-400" />;
+        return <Smile className="w-6 h-6 text-[#bb8b2c]" />;
       case 'Gift':
       default:
-        return <Gift className="w-6 h-6 text-amber-400" />;
+        return <Gift className="w-6 h-6 text-[#bb8b2c]" />;
     }
   };
 
   return (
     <section
       id="business-areas"
-      className="py-20 sm:py-28 bg-[#090F24] text-white relative overflow-hidden"
+      className="py-20 sm:py-28 bg-[#FAF8F5] text-[#2A1708] relative overflow-hidden border-b border-[#EAE3D5]"
     >
-      {/* Background Decor */}
-      <div className="absolute top-1/2 left-0 w-96 h-96 bg-amber-500/5 blur-[120px] rounded-full pointer-events-none" />
-      <div className="absolute -bottom-20 right-0 w-96 h-96 bg-blue-500/5 blur-[140px] rounded-full pointer-events-none" />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-bold tracking-wider uppercase">
-            <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+          <div className="flex items-center justify-center gap-2 text-xs font-bold text-[#865421] tracking-wider uppercase font-controller">
             <span>{t.businessAreas.sectionBadge}</span>
+            <span aria-hidden="true">·</span>
+            <span className="text-[#9b6b2a]">Core Capabilities</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-controller text-[#653814] tracking-tight">
             {t.businessAreas.title}
           </h2>
-          <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal">
+          <p className="text-sm sm:text-base text-[#6F5642] leading-relaxed font-normal text-balance">
             {t.businessAreas.subtitle}
           </p>
         </div>
@@ -66,53 +62,54 @@ export const BusinessAreas: React.FC<BusinessAreasProps> = ({
           {t.businessAreas.items.map((area) => (
             <div
               key={area.id}
-              className="group rounded-2xl bg-[#0B132B]/80 border border-slate-800 hover:border-amber-500/40 p-6 sm:p-8 transition-all duration-300 hover:shadow-2xl hover:shadow-amber-500/10 flex flex-col justify-between relative overflow-hidden backdrop-blur-sm"
+              className="group rounded-3xl bg-white border border-[#EAE3D5] hover:border-[#dec357] p-7 sm:p-9 transition-all duration-300 hover:shadow-xl hover:shadow-[#653814]/5 flex flex-col justify-between relative overflow-hidden"
             >
-              {/* Gold Top Accent Line on Hover */}
-              <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-amber-400 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+              {/* Subtle Gold Top Accent Line on Hover */}
+              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#dec357] to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
 
               <div>
-                {/* Top Header: Number & Icon */}
+                {/* Header: Number & Icon */}
                 <div className="flex items-center justify-between mb-6">
                   <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/25 flex items-center justify-center group-hover:scale-105 group-hover:bg-amber-500/20 transition-all">
+                    <div className="w-14 h-14 rounded-2xl bg-[#FAF8F5] border border-[#EAE3D5] flex items-center justify-center group-hover:border-[#dec357]/80 transition-colors shadow-xs">
                       {getIcon(area.iconName)}
                     </div>
                     <div>
-                      <span className="text-amber-400 font-mono font-bold text-sm tracking-wider">
-                        {area.number}
+                      <span className="font-controller text-sm font-bold text-[#bb8b2c] tracking-wider">
+                        {area.number}.
                       </span>
-                      <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider">
+                      <h4 className="text-xs font-semibold text-[#865421] uppercase tracking-wider">
                         {area.subtitle}
                       </h4>
                     </div>
                   </div>
-                  <span className="text-3xl font-black text-slate-800 font-mono group-hover:text-amber-500/20 transition-colors">
+                  <span className="text-4xl font-controller font-black text-[#F3EFE6] group-hover:text-[#dec357]/30 transition-colors">
                     {area.number}
                   </span>
                 </div>
 
                 {/* Title & Description */}
-                <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-amber-300 transition-colors mb-3">
+                <h3 className="text-xl sm:text-2xl font-bold text-[#653814] group-hover:text-[#865421] transition-colors mb-3">
                   {area.title}
                 </h3>
-                <p className="text-slate-300 text-sm leading-relaxed mb-6 font-normal">
+                <p className="text-[#6F5642] text-sm leading-relaxed mb-6 font-normal">
                   {area.description}
                 </p>
 
                 {/* Imagery Preview */}
-                <div className="relative rounded-xl overflow-hidden aspect-[16/8] mb-6 border border-slate-800">
+                <div className="relative rounded-2xl overflow-hidden aspect-[16/8] mb-6 border border-[#F5F1EA] bg-[#FAF8F5]">
                   <img
                     src={area.image}
                     alt={area.title}
+                    referrerPolicy="no-referrer"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#653814]/80 via-transparent to-transparent" />
                   <div className="absolute bottom-3 left-3 flex flex-wrap gap-1.5">
                     {area.materials.map((mat, idx) => (
                       <span
                         key={idx}
-                        className="px-2 py-0.5 rounded-md bg-slate-900/90 border border-slate-700/80 text-[11px] text-amber-300 font-medium"
+                        className="px-2.5 py-0.5 rounded-md bg-white/95 text-[#653814] text-[11px] font-bold shadow-xs"
                       >
                         {mat}
                       </span>
@@ -122,16 +119,16 @@ export const BusinessAreas: React.FC<BusinessAreasProps> = ({
 
                 {/* Key Capabilities */}
                 <div className="space-y-2.5 mb-6">
-                  <div className="text-xs font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
-                    <Layers className="w-3.5 h-3.5 text-amber-400" />
+                  <div className="font-controller text-xs font-bold text-[#865421] uppercase tracking-wider flex items-center gap-1.5">
+                    <Layers className="w-3.5 h-3.5 text-[#bb8b2c]" />
                     <span>Năng lực công nghệ & Tiêu chuẩn:</span>
                   </div>
                   {area.capabilities.map((cap, idx) => (
                     <div
                       key={idx}
-                      className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-300"
+                      className="flex items-start gap-2.5 text-xs sm:text-sm text-[#2A1708]"
                     >
-                      <CheckCircle className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                      <CheckCircle className="w-4 h-4 text-[#dec357] shrink-0 mt-0.5" />
                       <span>{cap}</span>
                     </div>
                   ))}
@@ -139,17 +136,17 @@ export const BusinessAreas: React.FC<BusinessAreasProps> = ({
               </div>
 
               {/* Action Button */}
-              <div className="pt-4 border-t border-slate-800/80 flex items-center justify-between">
-                <span className="text-xs text-slate-400 font-medium">
-                  Sản xuất theo yêu cầu B2B
+              <div className="pt-4 border-t border-[#F5F1EA] flex items-center justify-between">
+                <span className="text-xs text-[#865421] font-medium">
+                  Sản xuất OEM / ODM B2B
                 </span>
                 <button
                   type="button"
                   onClick={() => onSelectCategoryForQuote(area.title)}
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 text-amber-300 hover:text-amber-200 text-xs sm:text-sm font-bold tracking-wide transition-all group-hover:translate-x-1 cursor-pointer"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#FAF8F5] hover:bg-[#F5F1EA] border border-[#dec357]/60 text-[#653814] text-xs sm:text-sm font-bold tracking-wide transition-all group-hover:translate-x-0.5 cursor-pointer"
                 >
                   <span>{t.businessAreas.ctaCard}</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-4 h-4 text-[#bb8b2c]" />
                 </button>
               </div>
             </div>

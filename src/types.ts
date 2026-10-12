@@ -1,5 +1,7 @@
 export type Language = 'vi' | 'en';
 
+export type FontTheme = 'montserrat' | 'outfit' | 'be-vietnam-pro' | 'plus-jakarta-sans';
+
 export interface BusinessArea {
   id: string;
   number: string;

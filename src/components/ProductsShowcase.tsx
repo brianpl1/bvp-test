@@ -3,15 +3,11 @@ import { Language, ProductItem } from '../types';
 import { content } from '../translations';
 import { productsData } from '../data/productsData';
 import {
-  Sparkles,
   ArrowRight,
   Eye,
-  Check,
   Shield,
-  Layers,
   X,
   Package,
-  Clock,
 } from 'lucide-react';
 
 interface ProductsShowcaseProps {
@@ -33,23 +29,24 @@ export const ProductsShowcase: React.FC<ProductsShowcaseProps> = ({
       : productsData.filter((p) => p.category === activeTab);
 
   return (
-    <section id="products" className="py-20 sm:py-28 bg-[#F8FAFC] text-slate-900 relative">
+    <section id="products" className="py-20 sm:py-28 bg-white text-[#2A1708] relative border-b border-[#EAE3D5]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-[#85581A] text-xs font-bold tracking-wider uppercase">
-            <Sparkles className="w-3.5 h-3.5 text-amber-600" />
+          <div className="flex items-center justify-center gap-2 text-xs font-bold text-[#865421] tracking-wider uppercase font-controller">
             <span>{t.products.sectionBadge}</span>
+            <span aria-hidden="true">·</span>
+            <span className="text-[#9b6b2a]">Product Portfolio</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-950 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-controller text-[#653814] tracking-tight">
             {t.products.title}
           </h2>
-          <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
+          <p className="text-sm sm:text-base text-[#6F5642] leading-relaxed font-normal text-balance">
             {t.products.subtitle}
           </p>
         </div>
 
-        {/* Category Tabs */}
+        {/* Category Tabs (Clean Segmented Style) */}
         <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-12">
           {(
             [
@@ -64,10 +61,10 @@ export const ProductsShowcase: React.FC<ProductsShowcaseProps> = ({
               key={tab.key}
               type="button"
               onClick={() => setActiveTab(tab.key)}
-              className={`px-4 sm:px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold tracking-wide transition-all cursor-pointer ${
+              className={`px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold tracking-wide transition-all cursor-pointer ${
                 activeTab === tab.key
-                  ? 'bg-slate-950 text-white shadow-lg shadow-slate-950/20'
-                  : 'bg-white text-slate-600 hover:text-slate-950 hover:bg-slate-100 border border-slate-200'
+                  ? 'bg-[#653814] text-white shadow-sm'
+                  : 'bg-[#FAF8F5] text-[#6F5642] hover:text-[#653814] hover:bg-[#F5F1EA] border border-[#EAE3D5]'
               }`}
             >
               {tab.label}
@@ -80,23 +77,22 @@ export const ProductsShowcase: React.FC<ProductsShowcaseProps> = ({
           {filteredProducts.map((product) => (
             <div
               key={product.id}
-              className="rounded-2xl bg-white border border-slate-200/90 shadow-md hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between overflow-hidden group"
+              className="rounded-3xl bg-[#FAF8F5] border border-[#EAE3D5] hover:border-[#dec357] shadow-xs hover:shadow-xl hover:shadow-[#653814]/5 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between overflow-hidden group"
             >
               {/* Product Image Box */}
-              <div className="relative aspect-[4/3] overflow-hidden bg-slate-100">
+              <div className="relative aspect-[4/3] overflow-hidden bg-white">
                 <img
                   src={product.image}
                   alt={product.name}
+                  referrerPolicy="no-referrer"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                {/* Badge if any */}
                 {product.badge && (
-                  <div className="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-amber-500 text-slate-950 text-[10px] font-black uppercase tracking-wider shadow-sm">
+                  <div className="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-[#653814] text-white text-[10px] font-controller uppercase tracking-wider shadow-xs">
                     {product.badge}
                   </div>
                 )}
-                {/* Category Pill Right */}
-                <div className="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-slate-950/80 backdrop-blur-md text-white text-[10px] font-bold">
+                <div className="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-white/95 text-[#653814] text-[10px] font-bold shadow-xs">
                   {product.categoryLabel}
                 </div>
               </div>
@@ -104,26 +100,26 @@ export const ProductsShowcase: React.FC<ProductsShowcaseProps> = ({
               {/* Product Info Content */}
               <div className="p-6 flex-1 flex flex-col justify-between">
                 <div>
-                  <h3 className="text-lg font-bold text-slate-950 group-hover:text-amber-700 transition-colors mb-2 line-clamp-1">
+                  <h3 className="text-base sm:text-lg font-bold text-[#653814] group-hover:text-[#865421] transition-colors mb-2 line-clamp-1">
                     {product.name}
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-600 line-clamp-2 mb-4 leading-relaxed font-normal">
+                  <p className="text-xs sm:text-sm text-[#6F5642] line-clamp-2 mb-4 leading-relaxed font-normal">
                     {product.description}
                   </p>
 
                   {/* Specifications Meta */}
-                  <div className="space-y-1.5 py-3 border-y border-slate-100 text-xs">
+                  <div className="space-y-1.5 py-3 border-y border-[#EAE3D5] text-xs">
                     <div className="flex items-center justify-between">
-                      <span className="text-slate-500">{t.products.moqLabel}</span>
-                      <span className="font-bold text-slate-900">{product.moq}</span>
+                      <span className="text-[#865421] font-medium">{t.products.moqLabel}</span>
+                      <span className="font-bold text-[#653814] tabular-nums">{product.moq}</span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-slate-500">{t.products.timeLabel}</span>
-                      <span className="font-semibold text-slate-900">{product.productionTime}</span>
+                      <span className="text-[#865421] font-medium">{t.products.timeLabel}</span>
+                      <span className="font-semibold text-[#2A1708] tabular-nums">{product.productionTime}</span>
                     </div>
                     <div className="flex items-start justify-between gap-2 pt-0.5">
-                      <span className="text-slate-500 shrink-0">{t.products.materialLabel}</span>
-                      <span className="font-medium text-slate-800 text-right line-clamp-1">
+                      <span className="text-[#865421] font-medium shrink-0">{t.products.materialLabel}</span>
+                      <span className="font-medium text-[#2A1708] text-right line-clamp-1">
                         {product.material}
                       </span>
                     </div>
@@ -134,7 +130,7 @@ export const ProductsShowcase: React.FC<ProductsShowcaseProps> = ({
                     {product.techniques.map((tech, idx) => (
                       <span
                         key={idx}
-                        className="px-2 py-0.5 rounded bg-slate-100 text-slate-700 text-[10px] font-medium"
+                        className="px-2 py-0.5 rounded bg-white border border-[#EAE3D5] text-[#865421] text-[10px] font-medium"
                       >
                         {tech}
                       </span>
@@ -143,20 +139,20 @@ export const ProductsShowcase: React.FC<ProductsShowcaseProps> = ({
                 </div>
 
                 {/* Actions */}
-                <div className="mt-6 pt-4 border-t border-slate-100 flex items-center gap-2">
+                <div className="mt-6 pt-4 border-t border-[#EAE3D5] flex items-center gap-2">
                   <button
                     type="button"
                     onClick={() => setSelectedProduct(product)}
-                    className="flex-1 py-2.5 px-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
+                    className="flex-1 py-2.5 px-3 rounded-xl bg-white hover:bg-[#FAF8F5] border border-[#EAE3D5] text-[#653814] text-xs font-bold transition-colors flex items-center justify-center gap-1.5 cursor-pointer shadow-xs"
                   >
-                    <Eye className="w-3.5 h-3.5" />
+                    <Eye className="w-3.5 h-3.5 text-[#bb8b2c]" />
                     <span>{t.products.actionDetail}</span>
                   </button>
 
                   <button
                     type="button"
                     onClick={() => onSelectProductForQuote(product.name)}
-                    className="flex-1 py-2.5 px-3 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 text-xs font-extrabold tracking-wide shadow-sm transition-all flex items-center justify-center gap-1 cursor-pointer"
+                    className="bvp-btn-gold flex-1 py-2.5 px-3 rounded-xl font-controller text-[11px] sm:text-xs tracking-wider uppercase transition-all flex items-center justify-center gap-1 cursor-pointer"
                   >
                     <span>{t.products.actionQuote}</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -170,22 +166,22 @@ export const ProductsShowcase: React.FC<ProductsShowcaseProps> = ({
 
       {/* Product Detail Modal */}
       {selectedProduct && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md animate-in fade-in duration-200">
-          <div className="relative w-full max-w-2xl bg-white rounded-2xl shadow-2xl overflow-hidden border border-slate-200">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#653814]/70 backdrop-blur-md animate-in fade-in duration-200">
+          <div className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl overflow-hidden border border-[#dec357]/60">
             {/* Modal Header */}
-            <div className="p-6 border-b border-slate-100 flex items-center justify-between bg-slate-50">
+            <div className="p-6 border-b border-[#EAE3D5] flex items-center justify-between bg-[#FAF8F5]">
               <div>
-                <span className="text-xs font-bold text-amber-700 uppercase tracking-wider">
+                <span className="font-controller text-xs text-[#865421] uppercase tracking-wider">
                   {selectedProduct.categoryLabel}
                 </span>
-                <h3 className="text-xl font-black text-slate-950 mt-0.5">
+                <h3 className="font-controller text-xl text-[#653814] mt-0.5">
                   {selectedProduct.name}
                 </h3>
               </div>
               <button
                 type="button"
                 onClick={() => setSelectedProduct(null)}
-                className="p-2 rounded-lg text-slate-400 hover:text-slate-900 hover:bg-slate-200/80 transition-colors cursor-pointer"
+                className="p-2 rounded-xl text-[#6F5642] hover:text-[#653814] hover:bg-[#EAE3D5] transition-colors cursor-pointer"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -193,55 +189,54 @@ export const ProductsShowcase: React.FC<ProductsShowcaseProps> = ({
 
             {/* Modal Body */}
             <div className="p-6 space-y-6 max-h-[75vh] overflow-y-auto">
-              {/* Product Visual */}
-              <div className="relative aspect-[16/9] rounded-xl overflow-hidden bg-slate-100">
+              <div className="relative aspect-[16/9] rounded-2xl overflow-hidden bg-[#FAF8F5] border border-[#EAE3D5]">
                 <img
                   src={selectedProduct.image}
                   alt={selectedProduct.name}
+                  referrerPolicy="no-referrer"
                   className="w-full h-full object-cover"
                 />
               </div>
 
-              {/* Description */}
               <div>
-                <h4 className="text-sm font-bold text-slate-900 mb-1">Mô tả sản phẩm:</h4>
-                <p className="text-sm text-slate-600 leading-relaxed font-normal">
+                <h4 className="font-bold text-[#653814] text-sm mb-1">Mô tả sản phẩm:</h4>
+                <p className="text-sm text-[#6F5642] leading-relaxed font-normal">
                   {selectedProduct.description}
                 </p>
               </div>
 
               {/* Technical Specifications */}
-              <div className="rounded-xl bg-slate-50 p-4 border border-slate-200/80 space-y-2 text-xs sm:text-sm">
-                <h4 className="font-bold text-slate-900 mb-2 flex items-center gap-2">
-                  <Package className="w-4 h-4 text-amber-600" />
-                  {t.products.detailModal.techSpecs}
+              <div className="rounded-2xl bg-[#FAF8F5] p-4 border border-[#EAE3D5] space-y-2 text-xs sm:text-sm">
+                <h4 className="font-controller text-xs text-[#865421] uppercase tracking-wider mb-2 flex items-center gap-2">
+                  <Package className="w-4 h-4 text-[#bb8b2c]" />
+                  <span>{t.products.detailModal.techSpecs}</span>
                 </h4>
                 <div className="grid grid-cols-2 gap-2">
                   <div>
-                    <span className="text-slate-500">Số lượng tối thiểu (MOQ):</span>
-                    <div className="font-bold text-slate-900">{selectedProduct.moq}</div>
+                    <span className="text-[#865421]">Số lượng tối thiểu (MOQ):</span>
+                    <div className="font-bold text-[#653814] tabular-nums">{selectedProduct.moq}</div>
                   </div>
                   <div>
-                    <span className="text-slate-500">Thời gian sản xuất dự kiến:</span>
-                    <div className="font-bold text-slate-900">{selectedProduct.productionTime}</div>
+                    <span className="text-[#865421]">Thời gian sản xuất dự kiến:</span>
+                    <div className="font-bold text-[#653814] tabular-nums">{selectedProduct.productionTime}</div>
                   </div>
                 </div>
-                <div className="pt-2 border-t border-slate-200">
-                  <span className="text-slate-500">Chất liệu tiêu chuẩn:</span>
-                  <div className="font-semibold text-slate-900">{selectedProduct.material}</div>
+                <div className="pt-2 border-t border-[#EAE3D5]">
+                  <span className="text-[#865421]">Chất liệu tiêu chuẩn:</span>
+                  <div className="font-semibold text-[#2A1708]">{selectedProduct.material}</div>
                 </div>
               </div>
 
               {/* Branding Options */}
               <div>
-                <h4 className="text-sm font-bold text-slate-900 mb-2">
+                <h4 className="font-controller text-xs text-[#865421] uppercase tracking-wider mb-2">
                   {t.products.detailModal.brandingOptions}:
                 </h4>
                 <div className="flex flex-wrap gap-2">
                   {selectedProduct.techniques.map((tech, idx) => (
                     <span
                       key={idx}
-                      className="px-3 py-1 rounded-lg bg-amber-50 border border-amber-200 text-amber-900 text-xs font-semibold"
+                      className="px-3 py-1 rounded-lg bg-[#FAF8F5] border border-[#dec357]/60 text-[#653814] text-xs font-semibold"
                     >
                       ✓ {tech}
                     </span>
@@ -250,18 +245,18 @@ export const ProductsShowcase: React.FC<ProductsShowcaseProps> = ({
               </div>
 
               {/* Quality Pledge Notice */}
-              <div className="p-3.5 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-900 text-xs flex items-center gap-2.5">
-                <Shield className="w-5 h-5 text-emerald-600 shrink-0" />
+              <div className="p-3.5 rounded-xl bg-white border border-[#dec357] text-[#865421] text-xs flex items-center gap-2.5">
+                <Shield className="w-5 h-5 text-[#bb8b2c] shrink-0" />
                 <span>{t.products.detailModal.sampleNotice}</span>
               </div>
             </div>
 
             {/* Modal Footer */}
-            <div className="p-4 bg-slate-50 border-t border-slate-100 flex items-center justify-end gap-3">
+            <div className="p-4 bg-[#FAF8F5] border-t border-[#EAE3D5] flex items-center justify-end gap-3">
               <button
                 type="button"
                 onClick={() => setSelectedProduct(null)}
-                className="px-4 py-2.5 rounded-xl text-slate-600 hover:text-slate-900 font-bold text-xs cursor-pointer"
+                className="px-4 py-2.5 rounded-xl text-[#6F5642] hover:text-[#653814] font-bold text-xs cursor-pointer"
               >
                 {t.products.detailModal.close}
               </button>
@@ -272,7 +267,7 @@ export const ProductsShowcase: React.FC<ProductsShowcaseProps> = ({
                   setSelectedProduct(null);
                   onSelectProductForQuote(pName);
                 }}
-                className="px-6 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-xs tracking-wide shadow-md cursor-pointer"
+                className="bvp-btn-gold px-6 py-2.5 rounded-xl font-controller text-xs uppercase tracking-wider cursor-pointer"
               >
                 {t.products.detailModal.quoteThis}
               </button>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BVPLogo } from './BVPLogo';
-import { Language } from '../types';
+import { Language, FontTheme } from '../types';
 import { content } from '../translations';
 import {
   Phone,
@@ -10,19 +10,24 @@ import {
   X,
   ChevronRight,
   Globe,
-  Sparkles,
+  ArrowRight,
+  Type,
 } from 'lucide-react';
 
 interface HeaderProps {
   currentLang: Language;
   onLanguageChange: (lang: Language) => void;
   onOpenQuoteModal: () => void;
+  currentFont: FontTheme;
+  onFontChange: (font: FontTheme) => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
   currentLang,
   onLanguageChange,
   onOpenQuoteModal,
+  currentFont,
+  onFontChange,
 }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -30,7 +35,7 @@ export const Header: React.FC<HeaderProps> = ({
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 40) {
+      if (window.scrollY > 30) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -53,114 +58,126 @@ export const Header: React.FC<HeaderProps> = ({
 
   return (
     <>
-      {/* Top Utility Announcement Bar */}
-      <div className="bg-[#060B17] text-slate-400 text-xs border-b border-amber-900/20 py-2 transition-all">
+      {/* Top Utility Bar (Strict Brand Deep Chocolate #653814) */}
+      <div className="bg-[#653814] text-[#FAF8F5] text-xs py-2 border-b border-[#865421]/40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap justify-between items-center gap-2">
-          {/* Left Info: Contact & Hours */}
+          {/* Direct Contact & Operating Hours */}
           <div className="flex items-center flex-wrap gap-4 sm:gap-6 text-[11px] sm:text-xs">
             <a
               href="tel:0909388926"
-              className="flex items-center gap-1.5 hover:text-amber-400 transition-colors"
+              className="flex items-center gap-1.5 hover:text-[#f7e476] transition-colors"
             >
-              <Phone className="w-3.5 h-3.5 text-amber-500" />
-              <span className="font-semibold text-slate-300">0909 388 926</span>
+              <Phone className="w-3.5 h-3.5 text-[#dec357]" />
+              <span className="font-bold text-white tracking-wide tabular-nums">0909 388 926</span>
             </a>
             <a
               href="mailto:contact@bvp.vn"
-              className="hidden sm:flex items-center gap-1.5 hover:text-amber-400 transition-colors"
+              className="hidden sm:flex items-center gap-1.5 hover:text-[#f7e476] transition-colors text-[#F5F1EA]"
             >
-              <Mail className="w-3.5 h-3.5 text-amber-500" />
+              <Mail className="w-3.5 h-3.5 text-[#dec357]" />
               <span>contact@bvp.vn</span>
             </a>
-            <div className="hidden md:flex items-center gap-1.5 text-slate-400">
-              <Clock className="w-3.5 h-3.5 text-amber-500/80" />
+            <div className="hidden md:flex items-center gap-1.5 text-[#E8DFD0]">
+              <Clock className="w-3.5 h-3.5 text-[#dec357]" />
               <span>{t.nav.workingHours}</span>
             </div>
           </div>
 
-          {/* Right Info: Interactive Language Switcher */}
+          {/* Interactive Font Selector & Language Switcher */}
           <div className="flex items-center gap-3">
-            <span className="hidden sm:inline-flex items-center gap-1 text-slate-400 text-[11px]">
-              <Globe className="w-3 h-3 text-amber-500" />
-              Ngôn ngữ / Language:
-            </span>
-            <div className="inline-flex rounded-full bg-slate-900/90 p-0.5 border border-amber-500/30">
-              <button
-                type="button"
-                onClick={() => onLanguageChange('vi')}
-                className={`px-2.5 py-0.5 rounded-full text-[11px] font-bold tracking-wider transition-all duration-200 ${
-                  currentLang === 'vi'
-                    ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 shadow-sm'
-                    : 'text-slate-400 hover:text-white'
-                }`}
-                title="Tiếng Việt"
+            {/* Quick Font Selector Dropdown */}
+            <div className="flex items-center gap-1.5 text-[11px]">
+              <Type className="w-3.5 h-3.5 text-[#dec357]" />
+              <span className="hidden sm:inline text-[#E8DFD0]">Font:</span>
+              <select
+                value={currentFont}
+                onChange={(e) => onFontChange(e.target.value as FontTheme)}
+                className="bg-[#4A260B] text-white border border-[#865421] rounded px-2 py-0.5 text-[11px] font-bold focus:outline-none focus:border-[#dec357] cursor-pointer"
+                title="Thay đổi kiểu chữ toàn trang"
               >
-                🇻🇳 VI
-              </button>
-              <button
-                type="button"
-                onClick={() => onLanguageChange('en')}
-                className={`px-2.5 py-0.5 rounded-full text-[11px] font-bold tracking-wider transition-all duration-200 ${
-                  currentLang === 'en'
-                    ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 shadow-sm'
-                    : 'text-slate-400 hover:text-white'
-                }`}
-                title="English"
-              >
-                🇬🇧 EN
-              </button>
+                <option value="montserrat">Montserrat (Đề xuất)</option>
+                <option value="outfit">Outfit (Sang trọng)</option>
+                <option value="be-vietnam-pro">Be Vietnam Pro (Việt hoá)</option>
+                <option value="plus-jakarta-sans">Plus Jakarta Sans</option>
+              </select>
+            </div>
+
+            {/* Language Switcher */}
+            <div className="flex items-center gap-1.5 pl-2 border-l border-[#865421]">
+              <Globe className="w-3.5 h-3.5 text-[#dec357]" />
+              <div className="inline-flex rounded-md bg-[#4A260B] p-0.5 border border-[#865421]">
+                <button
+                  type="button"
+                  onClick={() => onLanguageChange('vi')}
+                  className={`px-2 py-0.5 rounded text-[11px] font-bold tracking-wider transition-colors cursor-pointer ${
+                    currentLang === 'vi'
+                      ? 'bg-[#dec357] text-[#653814]'
+                      : 'text-[#E8DFD0] hover:text-white'
+                  }`}
+                >
+                  VI
+                </button>
+                <button
+                  type="button"
+                  onClick={() => onLanguageChange('en')}
+                  className={`px-2 py-0.5 rounded text-[11px] font-bold tracking-wider transition-colors cursor-pointer ${
+                    currentLang === 'en'
+                      ? 'bg-[#dec357] text-[#653814]'
+                      : 'text-[#E8DFD0] hover:text-white'
+                  }`}
+                >
+                  EN
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Main Sticky Navigation Bar */}
+      {/* Main Sticky Navigation Bar (Clean Luxury White Canvas) */}
       <header
         className={`sticky top-0 z-40 w-full transition-all duration-300 ${
           isScrolled
-            ? 'bg-[#070D1E]/95 backdrop-blur-md shadow-xl shadow-black/40 border-b border-amber-500/20 py-2.5'
-            : 'bg-[#070D1E]/80 backdrop-blur-sm border-b border-white/5 py-4'
+            ? 'bg-white/95 backdrop-blur-md shadow-sm shadow-[#653814]/5 border-b border-[#EAE3D5] py-2.5'
+            : 'bg-white border-b border-[#EAE3D5] py-3.5'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          {/* Logo Branding */}
-          <a href="#hero" className="flex items-center group">
-            <BVPLogo size={isScrolled ? 'md' : 'md'} variant="horizontal" theme="dark" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-8">
+          {/* Zone 1: Single Brand Wordmark / Emblem Lockup */}
+          <a href="#hero" className="flex items-center shrink-0">
+            <BVPLogo size={isScrolled ? 'sm' : 'md'} variant="horizontal" theme="light" />
           </a>
 
-          {/* Desktop Navigation Links */}
-          <nav className="hidden xl:flex items-center space-x-1 lg:space-x-1.5">
+          {/* Zone 2: Desktop Navigation Links (Unboxed, single-line) */}
+          <nav className="hidden xl:flex items-center space-x-1 lg:space-x-2">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="px-2.5 py-1.5 text-[13px] font-medium text-slate-300 hover:text-amber-400 rounded-md transition-colors duration-150 relative group"
+                className="px-2.5 py-1.5 text-[13px] font-semibold text-[#2A1708] hover:text-[#653814] transition-colors relative group whitespace-nowrap"
               >
                 {link.name}
-                <span className="absolute bottom-0 left-2.5 right-2.5 h-[2px] bg-gradient-to-r from-amber-400 to-amber-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left" />
+                <span className="absolute bottom-0 left-2.5 right-2.5 h-[2px] bg-[#bb8b2c] scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left" />
               </a>
             ))}
           </nav>
 
-          {/* CTA Button & Mobile Hamburger */}
-          <div className="flex items-center gap-3">
+          {/* Zone 3: 1 Primary Action & Mobile Menu Toggle */}
+          <div className="flex items-center gap-3 shrink-0">
             <button
               type="button"
               onClick={onOpenQuoteModal}
-              className="relative group overflow-hidden rounded-lg p-[1px] focus:outline-none focus:ring-2 focus:ring-amber-400 shadow-lg shadow-amber-500/10 cursor-pointer"
+              className="bvp-btn-gold px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg font-controller text-xs tracking-wider uppercase flex items-center gap-2 cursor-pointer"
             >
-              <span className="absolute inset-0 bg-gradient-to-r from-amber-400 via-amber-200 to-amber-500 group-hover:opacity-100 opacity-90 transition-opacity" />
-              <span className="relative flex items-center gap-2 px-3.5 sm:px-4 py-2 rounded-[7px] bg-[#0A1128] text-amber-300 group-hover:bg-[#070D1E] group-hover:text-amber-200 text-xs sm:text-sm font-bold tracking-wide transition-colors">
-                <Sparkles className="w-3.5 h-3.5 text-amber-400 animate-pulse" />
-                {t.nav.getQuote}
-              </span>
+              <span>{t.nav.getQuote}</span>
+              <ArrowRight className="w-3.5 h-3.5 text-[#653814]" />
             </button>
 
-            {/* Mobile Drawer Trigger */}
+            {/* Mobile Hamburger */}
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="xl:hidden p-2 rounded-lg bg-slate-900 border border-slate-700/60 text-slate-300 hover:text-amber-400 hover:border-amber-500/40 transition-colors"
+              className="xl:hidden p-2 rounded-lg bg-[#FAF8F5] border border-[#EAE3D5] text-[#653814] hover:bg-[#F5F1EA] transition-colors cursor-pointer"
               aria-label="Toggle Navigation Menu"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -170,31 +187,46 @@ export const Header: React.FC<HeaderProps> = ({
 
         {/* Mobile Navigation Drawer */}
         {mobileMenuOpen && (
-          <div className="xl:hidden fixed inset-x-0 top-[105px] bg-[#070D1E]/98 backdrop-blur-xl border-b border-amber-500/30 shadow-2xl p-6 transition-all duration-300 animate-in slide-in-from-top-4 max-h-[85vh] overflow-y-auto">
-            <div className="flex flex-col space-y-3">
+          <div className="xl:hidden fixed inset-x-0 top-[104px] bg-white border-b border-[#EAE3D5] shadow-xl p-5 transition-all duration-200 max-h-[85vh] overflow-y-auto z-50">
+            <div className="flex flex-col space-y-1">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center justify-between py-2.5 px-3 rounded-lg text-slate-200 hover:text-amber-400 hover:bg-slate-900/60 font-medium text-sm border-b border-slate-800/60 transition-colors"
+                  className="flex items-center justify-between py-2.5 px-3 rounded-lg text-[#2A1708] hover:text-[#653814] hover:bg-[#FAF8F5] font-semibold text-sm transition-colors"
                 >
                   <span>{link.name}</span>
-                  <ChevronRight className="w-4 h-4 text-amber-500/60" />
+                  <ChevronRight className="w-4 h-4 text-[#dec357]" />
                 </a>
               ))}
 
+              {/* Mobile Font Switcher */}
+              <div className="pt-4 mt-2 flex items-center justify-between border-t border-[#EAE3D5]">
+                <span className="text-xs text-[#865421] font-semibold">Kiểu chữ / Typography</span>
+                <select
+                  value={currentFont}
+                  onChange={(e) => onFontChange(e.target.value as FontTheme)}
+                  className="bg-[#FAF8F5] text-[#653814] border border-[#EAE3D5] rounded px-2.5 py-1 text-xs font-bold"
+                >
+                  <option value="montserrat">Montserrat (Đề xuất)</option>
+                  <option value="outfit">Outfit (Sang trọng)</option>
+                  <option value="be-vietnam-pro">Be Vietnam Pro</option>
+                  <option value="plus-jakarta-sans">Plus Jakarta Sans</option>
+                </select>
+              </div>
+
               {/* Language Switcher in Drawer */}
-              <div className="pt-4 flex items-center justify-between border-t border-slate-800">
-                <span className="text-xs text-slate-400 font-medium">Ngôn ngữ / Language</span>
-                <div className="inline-flex rounded-full bg-slate-900 p-1 border border-amber-500/30">
+              <div className="pt-3 flex items-center justify-between border-t border-[#EAE3D5]">
+                <span className="text-xs text-[#865421] font-semibold">Ngôn ngữ / Language</span>
+                <div className="inline-flex rounded-md bg-[#FAF8F5] p-0.5 border border-[#EAE3D5]">
                   <button
                     type="button"
                     onClick={() => onLanguageChange('vi')}
-                    className={`px-3 py-1 rounded-full text-xs font-bold ${
+                    className={`px-3 py-1 rounded text-xs font-bold ${
                       currentLang === 'vi'
-                        ? 'bg-amber-500 text-slate-950 font-extrabold'
-                        : 'text-slate-400'
+                        ? 'bg-[#dec357] text-[#653814]'
+                        : 'text-[#6F5642]'
                     }`}
                   >
                     Tiếng Việt
@@ -202,10 +234,10 @@ export const Header: React.FC<HeaderProps> = ({
                   <button
                     type="button"
                     onClick={() => onLanguageChange('en')}
-                    className={`px-3 py-1 rounded-full text-xs font-bold ${
+                    className={`px-3 py-1 rounded text-xs font-bold ${
                       currentLang === 'en'
-                        ? 'bg-amber-500 text-slate-950 font-extrabold'
-                        : 'text-slate-400'
+                        ? 'bg-[#dec357] text-[#653814]'
+                        : 'text-[#6F5642]'
                     }`}
                   >
                     English
@@ -213,13 +245,13 @@ export const Header: React.FC<HeaderProps> = ({
                 </div>
               </div>
 
-              {/* Quick Hotline in Drawer */}
-              <div className="pt-2 flex flex-col gap-2">
+              {/* Drawer Quick Contact */}
+              <div className="pt-4 flex flex-col gap-2">
                 <a
                   href="tel:0909388926"
-                  className="w-full py-2.5 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-400 font-bold text-center text-sm flex items-center justify-center gap-2"
+                  className="w-full py-2.5 rounded-lg bg-[#FAF8F5] border border-[#EAE3D5] text-[#653814] font-bold text-center text-sm flex items-center justify-center gap-2"
                 >
-                  <Phone className="w-4 h-4" />
+                  <Phone className="w-4 h-4 text-[#bb8b2c]" />
                   Hotline: 0909 388 926
                 </a>
                 <button
@@ -228,7 +260,7 @@ export const Header: React.FC<HeaderProps> = ({
                     setMobileMenuOpen(false);
                     onOpenQuoteModal();
                   }}
-                  className="w-full py-2.5 rounded-lg bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 font-extrabold text-center text-sm shadow-md"
+                  className="bvp-btn-gold w-full py-3 rounded-lg font-controller text-center text-xs tracking-wider uppercase"
                 >
                   {t.nav.getQuote}
                 </button>

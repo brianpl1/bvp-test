@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState } from 'react';
-import { Language, InquiryFormData } from './types';
+import React, { useState, useEffect } from 'react';
+import { Language, FontTheme, InquiryFormData } from './types';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { AboutSection } from './components/AboutSection';
@@ -16,11 +16,20 @@ import { ClientsSection } from './components/ClientsSection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { SampleModal } from './components/SampleModal';
+import { FontSwitcher } from './components/FontSwitcher';
 
 export default function App() {
   const [currentLang, setCurrentLang] = useState<Language>('vi');
+  const [fontTheme, setFontTheme] = useState<FontTheme>(() => {
+    const saved = localStorage.getItem('bvp_font_theme');
+    return (saved as FontTheme) || 'montserrat';
+  });
   const [isSampleModalOpen, setIsSampleModalOpen] = useState(false);
   const [contactInitialData, setContactInitialData] = useState<Partial<InquiryFormData>>({});
+
+  useEffect(() => {
+    localStorage.setItem('bvp_font_theme', fontTheme);
+  }, [fontTheme]);
 
   // Scroll smoothly to contact section with pre-filled interest
   const scrollToContactWithData = (data: Partial<InquiryFormData>) => {
@@ -51,12 +60,17 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#070D1E] text-slate-100 flex flex-col font-sans selection:bg-amber-500 selection:text-slate-950">
+    <div
+      data-theme-font={fontTheme}
+      className="min-h-screen bg-[#FAF8F5] text-[#2A1708] flex flex-col selection:bg-[#dec357] selection:text-[#653814] transition-all"
+    >
       {/* Navigation Header */}
       <Header
         currentLang={currentLang}
         onLanguageChange={setCurrentLang}
         onOpenQuoteModal={handleOpenQuoteModal}
+        currentFont={fontTheme}
+        onFontChange={setFontTheme}
       />
 
       {/* Main Sections */}
@@ -111,6 +125,13 @@ export default function App() {
       <SampleModal
         isOpen={isSampleModalOpen}
         onClose={() => setIsSampleModalOpen(false)}
+        currentLang={currentLang}
+      />
+
+      {/* Floating Font Customizer Tool */}
+      <FontSwitcher
+        currentFont={fontTheme}
+        onFontChange={setFontTheme}
         currentLang={currentLang}
       />
     </div>

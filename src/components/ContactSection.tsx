@@ -8,12 +8,9 @@ import {
   Clock,
   Send,
   CheckCircle2,
-  Sparkles,
   HelpCircle,
   ChevronDown,
-  Building,
   ShieldCheck,
-  Heart,
 } from 'lucide-react';
 
 interface ContactSectionProps {
@@ -42,7 +39,6 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [expandedFaqIndex, setExpandedFaqIndex] = useState<number | null>(0);
 
-  // Update formData when initialFormData changes (e.g. from QuoteCalculator or Product)
   React.useEffect(() => {
     if (initialFormData) {
       setFormData((prev) => ({
@@ -77,11 +73,9 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
     if (!validate()) return;
 
     setIsSubmitting(true);
-    // Simulate API submission
     setTimeout(() => {
       setIsSubmitting(false);
       setShowSuccessModal(true);
-      // Reset form
       setFormData({
         fullName: '',
         company: '',
@@ -92,35 +86,36 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
         notes: '',
       });
       setErrors({});
-    }, 800);
+    }, 600);
   };
 
   return (
-    <section id="contact" className="py-20 sm:py-28 bg-[#F1F5F9] text-slate-900 relative">
+    <section id="contact" className="py-20 sm:py-28 bg-white text-[#2A1708] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-[#85581A] text-xs font-bold tracking-wider uppercase">
-            <Sparkles className="w-3.5 h-3.5 text-amber-600" />
+          <div className="flex items-center justify-center gap-2 text-xs font-bold text-[#865421] tracking-wider uppercase font-controller">
             <span>{t.contact.sectionBadge}</span>
+            <span aria-hidden="true">·</span>
+            <span className="text-[#9b6b2a]">Direct Quotation Service</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-950 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-controller text-[#653814] tracking-tight">
             {t.contact.title}
           </h2>
-          <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
+          <p className="text-sm sm:text-base text-[#6F5642] leading-relaxed font-normal text-balance">
             {t.contact.subtitle}
           </p>
         </div>
 
-        {/* 2-Column Form & Direct Contact Info */}
+        {/* 2-Column Form & Direct Corporate Info */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start mb-20">
           {/* Left Column: Inquiry Form (7 cols) */}
-          <div className="lg:col-span-7 bg-white rounded-2xl p-8 sm:p-10 border border-slate-200/90 shadow-xl shadow-slate-200/40">
+          <div className="lg:col-span-7 bg-[#FAF8F5] rounded-3xl p-8 sm:p-10 border border-[#EAE3D5] shadow-xs">
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {/* Full Name */}
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                  <label className="block text-xs font-bold text-[#653814] uppercase tracking-wider mb-1.5 font-controller">
                     {t.contact.form.fullName}
                   </label>
                   <input
@@ -130,10 +125,10 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                       setFormData({ ...formData, fullName: e.target.value })
                     }
                     placeholder={t.contact.form.fullNamePlaceholder}
-                    className={`w-full px-4 py-2.5 rounded-xl border text-sm text-slate-900 focus:outline-none transition-colors ${
+                    className={`w-full px-4 py-3 rounded-xl border text-sm text-[#2A1708] focus:outline-none transition-colors ${
                       errors.fullName
-                        ? 'border-red-500 bg-red-50/30'
-                        : 'border-slate-200 focus:border-amber-500 bg-slate-50/50'
+                        ? 'border-red-500 bg-red-50/40'
+                        : 'border-[#EAE3D5] focus:border-[#dec357] bg-white'
                     }`}
                   />
                   {errors.fullName && (
@@ -145,7 +140,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
 
                 {/* Company Name */}
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                  <label className="block text-xs font-bold text-[#653814] uppercase tracking-wider mb-1.5 font-controller">
                     {t.contact.form.company}
                   </label>
                   <input
@@ -155,10 +150,10 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                       setFormData({ ...formData, company: e.target.value })
                     }
                     placeholder={t.contact.form.companyPlaceholder}
-                    className={`w-full px-4 py-2.5 rounded-xl border text-sm text-slate-900 focus:outline-none transition-colors ${
+                    className={`w-full px-4 py-3 rounded-xl border text-sm text-[#2A1708] focus:outline-none transition-colors ${
                       errors.company
-                        ? 'border-red-500 bg-red-50/30'
-                        : 'border-slate-200 focus:border-amber-500 bg-slate-50/50'
+                        ? 'border-red-500 bg-red-50/40'
+                        : 'border-[#EAE3D5] focus:border-[#dec357] bg-white'
                     }`}
                   />
                   {errors.company && (
@@ -172,7 +167,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {/* Phone */}
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                  <label className="block text-xs font-bold text-[#653814] uppercase tracking-wider mb-1.5 font-controller">
                     {t.contact.form.phone}
                   </label>
                   <input
@@ -182,10 +177,10 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                       setFormData({ ...formData, phone: e.target.value })
                     }
                     placeholder={t.contact.form.phonePlaceholder}
-                    className={`w-full px-4 py-2.5 rounded-xl border text-sm text-slate-900 focus:outline-none transition-colors ${
+                    className={`w-full px-4 py-3 rounded-xl border text-sm text-[#2A1708] focus:outline-none transition-colors ${
                       errors.phone
-                        ? 'border-red-500 bg-red-50/30'
-                        : 'border-slate-200 focus:border-amber-500 bg-slate-50/50'
+                        ? 'border-red-500 bg-red-50/40'
+                        : 'border-[#EAE3D5] focus:border-[#dec357] bg-white'
                     }`}
                   />
                   {errors.phone && (
@@ -197,7 +192,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
 
                 {/* Email */}
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                  <label className="block text-xs font-bold text-[#653814] uppercase tracking-wider mb-1.5 font-controller">
                     {t.contact.form.email}
                   </label>
                   <input
@@ -207,10 +202,10 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                       setFormData({ ...formData, email: e.target.value })
                     }
                     placeholder={t.contact.form.emailPlaceholder}
-                    className={`w-full px-4 py-2.5 rounded-xl border text-sm text-slate-900 focus:outline-none transition-colors ${
+                    className={`w-full px-4 py-3 rounded-xl border text-sm text-[#2A1708] focus:outline-none transition-colors ${
                       errors.email
-                        ? 'border-red-500 bg-red-50/30'
-                        : 'border-slate-200 focus:border-amber-500 bg-slate-50/50'
+                        ? 'border-red-500 bg-red-50/40'
+                        : 'border-[#EAE3D5] focus:border-[#dec357] bg-white'
                     }`}
                   />
                   {errors.email && (
@@ -221,10 +216,10 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                 </div>
               </div>
 
-              {/* Product Category */}
+              {/* Product Category & Quantity */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                  <label className="block text-xs font-bold text-[#653814] uppercase tracking-wider mb-1.5 font-controller">
                     {t.contact.form.category}
                   </label>
                   <select
@@ -232,7 +227,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                     onChange={(e) =>
                       setFormData({ ...formData, category: e.target.value })
                     }
-                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50/50 text-sm text-slate-900 focus:outline-none focus:border-amber-500"
+                    className="w-full px-4 py-3 rounded-xl border border-[#EAE3D5] bg-white text-sm text-[#2A1708] focus:outline-none focus:border-[#dec357]"
                   >
                     {t.contact.form.categoryOptions.map((opt, i) => (
                       <option key={i} value={opt}>
@@ -242,9 +237,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                   </select>
                 </div>
 
-                {/* Quantity */}
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                  <label className="block text-xs font-bold text-[#653814] uppercase tracking-wider mb-1.5 font-controller">
                     {t.contact.form.quantity}
                   </label>
                   <select
@@ -252,7 +246,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                     onChange={(e) =>
                       setFormData({ ...formData, quantity: e.target.value })
                     }
-                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50/50 text-sm text-slate-900 focus:outline-none focus:border-amber-500"
+                    className="w-full px-4 py-3 rounded-xl border border-[#EAE3D5] bg-white text-sm text-[#2A1708] focus:outline-none focus:border-[#dec357]"
                   >
                     {t.contact.form.quantityOptions.map((opt, i) => (
                       <option key={i} value={opt}>
@@ -265,7 +259,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
 
               {/* Notes */}
               <div>
-                <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                <label className="block text-xs font-bold text-[#653814] uppercase tracking-wider mb-1.5 font-controller">
                   {t.contact.form.notes}
                 </label>
                 <textarea
@@ -275,13 +269,13 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                     setFormData({ ...formData, notes: e.target.value })
                   }
                   placeholder={t.contact.form.notesPlaceholder}
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50/50 text-sm text-slate-900 focus:outline-none focus:border-amber-500 resize-none"
+                  className="w-full px-4 py-3 rounded-xl border border-[#EAE3D5] bg-white text-sm text-[#2A1708] focus:outline-none focus:border-[#dec357] resize-none"
                 />
               </div>
 
               {/* Privacy Notice */}
-              <div className="flex items-center gap-2 text-xs text-slate-500">
-                <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
+              <div className="flex items-center gap-2 text-xs text-[#865421]">
+                <ShieldCheck className="w-4 h-4 text-[#dec357] shrink-0" />
                 <span>{t.contact.form.privacyNotice}</span>
               </div>
 
@@ -289,7 +283,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full py-4 rounded-xl bg-gradient-to-r from-amber-500 via-amber-400 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black text-sm tracking-wide shadow-lg shadow-amber-500/25 transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+                className="bvp-btn-gold w-full py-4 rounded-xl font-controller text-xs sm:text-sm tracking-wider uppercase flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
               >
                 {isSubmitting ? (
                   <span>{t.contact.form.submitting}</span>
@@ -305,67 +299,69 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
 
           {/* Right Column: Direct Corporate Info (5 cols) */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="rounded-2xl bg-[#070D1E] text-white p-8 border border-slate-800 shadow-xl space-y-6">
+            <div className="rounded-3xl bg-[#653814] text-[#FAF8F5] p-8 border border-[#865421] shadow-xl space-y-6">
               <div>
-                <span className="text-[11px] font-bold text-amber-400 uppercase tracking-widest block font-mono">
+                <span className="font-controller text-[11px] text-[#f7e476] uppercase tracking-widest block">
                   {t.contact.infoTitle}
                 </span>
-                <h3 className="text-xl font-black text-white mt-1 leading-snug">
+                <h3 className="font-controller text-xl text-white mt-1 leading-snug">
                   {t.contact.companyFullName}
                 </h3>
-                <h4 className="text-xs font-semibold text-slate-400 tracking-wider font-mono">
+                <h4 className="font-controller text-xs text-[#E8DFD0] tracking-wider mt-0.5">
                   {t.contact.companyEnName}
                 </h4>
               </div>
 
-              <div className="space-y-5 pt-4 border-t border-slate-800 text-xs sm:text-sm">
+              <div className="space-y-5 pt-4 border-t border-[#865421] text-xs sm:text-sm">
                 <div className="flex items-start gap-3.5">
-                  <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 shrink-0 mt-0.5">
+                  <div className="w-10 h-10 rounded-xl bg-[#4A260B] border border-[#dec357]/40 flex items-center justify-center text-[#f7e476] shrink-0 mt-0.5">
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
                     <div className="font-bold text-white">{t.contact.addressTitle}</div>
-                    <div className="text-slate-300 mt-0.5">{t.contact.addressValue}</div>
+                    <div className="text-[#E8DFD0] mt-0.5">{t.contact.addressValue}</div>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3.5">
-                  <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 shrink-0 mt-0.5">
+                  <div className="w-10 h-10 rounded-xl bg-[#4A260B] border border-[#dec357]/40 flex items-center justify-center text-[#f7e476] shrink-0 mt-0.5">
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
                     <div className="font-bold text-white">{t.contact.hotlineTitle}</div>
-                    <div className="text-amber-400 font-bold mt-0.5">
+                    <div className="text-[#f7e476] font-bold mt-0.5 tracking-wide">
                       {t.contact.hotlineValue}
                     </div>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3.5">
-                  <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 shrink-0 mt-0.5">
+                  <div className="w-10 h-10 rounded-xl bg-[#4A260B] border border-[#dec357]/40 flex items-center justify-center text-[#f7e476] shrink-0 mt-0.5">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
                     <div className="font-bold text-white">{t.contact.emailTitle}</div>
-                    <div className="text-slate-300 mt-0.5">{t.contact.emailValue}</div>
+                    <div className="text-[#E8DFD0] mt-0.5">{t.contact.emailValue}</div>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3.5">
-                  <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 shrink-0 mt-0.5">
+                  <div className="w-10 h-10 rounded-xl bg-[#4A260B] border border-[#dec357]/40 flex items-center justify-center text-[#f7e476] shrink-0 mt-0.5">
                     <Clock className="w-5 h-5" />
                   </div>
                   <div>
                     <div className="font-bold text-white">{t.contact.workingTimeTitle}</div>
-                    <div className="text-slate-300 mt-0.5">{t.contact.workingTimeValue}</div>
+                    <div className="text-[#E8DFD0] mt-0.5">{t.contact.workingTimeValue}</div>
                   </div>
                 </div>
               </div>
 
-              {/* Express Response Guarantee */}
-              <div className="p-4 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs">
-                <span className="font-bold block mb-1">⚡ Cam Kết Phản Hồi Trong 30 Phút:</span>
-                Nhận maket thiết kế mẫu 2D/3D và báo giá chi tiết ngay trong ngày làm việc.
+              {/* SLA Response Guarantee */}
+              <div className="p-4 rounded-2xl bg-[#4A260B] border border-[#dec357]/50 text-[#F5F1EA] text-xs">
+                <span className="font-bold text-[#f7e476] block mb-1">
+                  ⚡ Cam Kết Phản Hồi Trong 30 Phút:
+                </span>
+                Nhận maket thiết kế mẫu 2D/3D và bảng báo giá chi tiết ngay trong ngày làm việc.
               </div>
             </div>
           </div>
@@ -374,8 +370,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
         {/* FAQ Accordion */}
         <div className="max-w-4xl mx-auto space-y-4">
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-extrabold text-slate-950 tracking-tight flex items-center justify-center gap-2">
-              <HelpCircle className="w-6 h-6 text-amber-600" />
+            <h3 className="font-controller text-2xl text-[#653814] tracking-tight flex items-center justify-center gap-2">
+              <HelpCircle className="w-6 h-6 text-[#bb8b2c]" />
               <span>{t.contact.faqTitle}</span>
             </h3>
           </div>
@@ -386,24 +382,24 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
               return (
                 <div
                   key={index}
-                  className="rounded-2xl bg-white border border-slate-200 overflow-hidden shadow-sm transition-all"
+                  className="rounded-2xl bg-[#FAF8F5] border border-[#EAE3D5] overflow-hidden shadow-xs transition-all"
                 >
                   <button
                     type="button"
                     onClick={() =>
                       setExpandedFaqIndex(isExpanded ? null : index)
                     }
-                    className="w-full p-5 text-left flex items-center justify-between gap-4 font-bold text-slate-900 text-sm sm:text-base hover:text-amber-700 transition-colors cursor-pointer"
+                    className="w-full p-5 text-left flex items-center justify-between gap-4 font-bold text-[#653814] text-sm sm:text-base hover:text-[#865421] transition-colors cursor-pointer"
                   >
                     <span>{faq.q}</span>
                     <ChevronDown
-                      className={`w-5 h-5 text-amber-600 shrink-0 transition-transform duration-200 ${
+                      className={`w-5 h-5 text-[#bb8b2c] shrink-0 transition-transform duration-200 ${
                         isExpanded ? 'rotate-180' : ''
                       }`}
                     />
                   </button>
                   {isExpanded && (
-                    <div className="px-5 pb-5 pt-1 text-slate-600 text-xs sm:text-sm leading-relaxed border-t border-slate-100 font-normal">
+                    <div className="px-5 pb-5 pt-1 text-[#6F5642] text-xs sm:text-sm leading-relaxed border-t border-[#EAE3D5] font-normal">
                       {faq.a}
                     </div>
                   )}
@@ -416,23 +412,23 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
 
       {/* Success Modal */}
       {showSuccessModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md animate-in fade-in duration-200">
-          <div className="relative w-full max-w-lg bg-white rounded-3xl p-8 sm:p-10 shadow-2xl text-center space-y-5 border border-slate-200">
-            <div className="w-16 h-16 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center mx-auto shadow-md">
-              <CheckCircle2 className="w-9 h-9 text-amber-600" />
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#653814]/70 backdrop-blur-md animate-in fade-in duration-200">
+          <div className="relative w-full max-w-lg bg-white rounded-3xl p-8 sm:p-10 shadow-2xl text-center space-y-5 border border-[#dec357]/60">
+            <div className="w-16 h-16 rounded-2xl bg-[#FAF8F5] border border-[#dec357]/60 text-[#bb8b2c] flex items-center justify-center mx-auto shadow-sm">
+              <CheckCircle2 className="w-9 h-9 text-[#dec357]" />
             </div>
 
             <div>
-              <h3 className="text-2xl font-black text-slate-950">
+              <h3 className="font-controller text-2xl text-[#653814]">
                 {t.contact.successModal.title}
               </h3>
-              <p className="mt-3 text-slate-700 text-sm sm:text-base leading-relaxed font-semibold">
+              <p className="mt-3 text-[#2A1708] text-sm sm:text-base leading-relaxed font-semibold">
                 {t.contact.successModal.gratitudeMessage}
               </p>
             </div>
 
-            <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs sm:text-sm text-slate-600 text-left">
-              <span className="font-bold text-slate-900 block mb-1">
+            <div className="p-4 rounded-2xl bg-[#FAF8F5] border border-[#EAE3D5] text-xs sm:text-sm text-[#6F5642] text-left">
+              <span className="font-bold text-[#653814] block mb-1">
                 Các bước tiếp theo:
               </span>
               {t.contact.successModal.nextSteps}
@@ -441,7 +437,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
             <button
               type="button"
               onClick={() => setShowSuccessModal(false)}
-              className="w-full py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm tracking-wide transition-all shadow-md cursor-pointer"
+              className="bvp-btn-gold w-full py-3.5 rounded-xl font-controller text-xs sm:text-sm uppercase tracking-wider cursor-pointer"
             >
               {t.contact.successModal.closeBtn}
             </button>

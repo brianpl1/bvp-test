@@ -54,6 +54,12 @@ export const content = {
       pledgeQuote:
         '“Tại BVP, chúng tôi không chỉ bán sản phẩm – chúng tôi trao gửi sự tận tâm và đồng hành bền bỉ cùng thành công của quý đối tác.”',
       leaderTitle: 'Ban Giám Đốc • BVP Trading & Manufacturing Co., Ltd',
+      logoStoryTitle: 'Ý Nghĩa Biểu Tượng BVP',
+      logoStorySubtitle: 'Thành phần biểu tượng & Tinh thần thương hiệu (Theo chuẩn A.02)',
+      logoStoryEmblem:
+        'Biểu tượng logo BVP được thiết kế với phong cách mạnh mẽ, vững chãi, thể hiện bản lĩnh và sự phát triển bền vững của doanh nghiệp đa ngành hàng. Điểm nhấn đặc biệt là sự cách điệu của chữ "BVP" kết hợp cùng hình ảnh cánh chim – biểu tượng của sự tự do, khát vọng bay cao, bay xa, tinh thần tiên phong, không ngừng đổi mới và sẵn sàng chinh phục những đỉnh cao mới.',
+      logoStorySlogan:
+        'Với tiêu chí "Beyond Value Products", logo không chỉ đại diện cho những sản phẩm có giá trị vượt trội mà còn thể hiện tầm nhìn xa, hướng đến sự đổi mới và vươn tầm quốc tế. Phần chữ nét đậm, đứng mang lại cảm giác uy tín, vững chãi và chất lượng cao cấp.',
       stats: {
         experience: 'Quy trình đồng bộ',
         experienceSub: 'Khép kín từ A đến Z',
@@ -83,7 +89,7 @@ export const content = {
             'Form dáng chuẩn xuất khẩu, may đo theo bảng size tiêu chuẩn doanh nghiệp',
           ],
           materials: ['Cotton 100%', 'Cá sấu CVC 4 chiều', 'Vải Coolmax', 'Kaki thun cao cấp'],
-          image: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=900&q=80',
+          image: '/src/assets/images/bvp_apparel_production_1791819527723.jpg',
           iconName: 'Shirt',
         },
         {
@@ -99,7 +105,7 @@ export const content = {
             'Thiết kế ngăn chống sốc chuyên dụng cho laptop và thiết bị số',
           ],
           materials: ['Vải Dù 900D/1680D trượt nước', 'Canvas bố tự nhiên', 'Vải không dệt', 'Da PU phối cao cấp'],
-          image: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=900&q=80',
+          image: '/src/assets/images/bvp_backpacks_manufacturing_1791819542614.jpg',
           iconName: 'Briefcase',
         },
         {
@@ -115,7 +121,7 @@ export const content = {
             'Ruột bông trắng gòn 7D kháng khuẩn, định hình form bền lâu không xẹp lún',
           ],
           materials: ['Vải nhung lông mịn 4 chiều', 'Nỉ nhung tuyết', 'Bông gòn Bi 7D', 'Vải lông xoắn cao cấp'],
-          image: 'https://images.unsplash.com/photo-1559454403-b8fb88521f11?auto=format&fit=crop&w=900&q=80',
+          image: '/src/assets/images/bvp_plush_cushions_mascot_1791819554630.jpg',
           iconName: 'Smile',
         },
         {
@@ -131,7 +137,7 @@ export const content = {
             'Hộp quà tặng định hình bồi nhung, túi xách giấy đồng bộ cao cấp',
           ],
           materials: ['Inox 304/316 thực phẩm', 'Da Simili / Da bò thật', 'Tre trúc tự nhiên', 'Hộp xi mỹ thuật'],
-          image: 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=900&q=80',
+          image: '/src/assets/images/bvp_corporate_gift_sets_1791819566143.jpg',
           iconName: 'Gift',
         },
       ],
@@ -561,6 +567,12 @@ export const content = {
       pledgeQuote:
         '“At BVP, we do not merely supply products – we deliver dedication and stand by our partners’ enduring success.”',
       leaderTitle: 'Board of Directors • BVP Trading & Manufacturing Co., Ltd',
+      logoStoryTitle: 'BVP Brand Symbolism',
+      logoStorySubtitle: 'Logo Elements & Brand Philosophy (Guideline Standard A.02)',
+      logoStoryEmblem:
+        'The BVP logo emblem is crafted with a bold, enduring silhouette reflecting the resilience and sustainable growth of a diversified enterprise. The stylized "BVP" monogram converges into soaring bird wings – symbolizing liberty, high-reaching aspiration, pioneering spirit, and a readiness to conquer new heights.',
+      logoStorySlogan:
+        'Anchored by "Beyond Value Products", the logo embodies not just products of superior value, but an expansive vision towards innovation and international stature. The solid, upright Controller-style typography delivers undeniable prestige, stability, and premium quality.',
       stats: {
         experience: 'Synchronized Workflow',
         experienceSub: 'End-to-end integration',
@@ -590,7 +602,7 @@ export const content = {
             'Export-grade tailoring patterns tailored to enterprise sizing charts',
           ],
           materials: ['Cotton 100%', '4-Way CVC Pique', 'Coolmax Mesh', 'Premium Khaki Stretch'],
-          image: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=900&q=80',
+          image: '/src/assets/images/bvp_apparel_production_1791819527723.jpg',
           iconName: 'Shirt',
         },
         {
@@ -606,7 +618,7 @@ export const content = {
             'Custom internal padded compartments for laptops, tablets, and tech accessories',
           ],
           materials: ['900D/1680D Water-Repellent Nylon', 'Natural Cotton Canvas', 'Eco Non-Woven', 'Premium PU Leather'],
-          image: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=900&q=80',
+          image: '/src/assets/images/bvp_backpacks_manufacturing_1791819542614.jpg',
           iconName: 'Briefcase',
         },
         {
@@ -622,7 +634,7 @@ export const content = {
             'Anti-bacterial 7D virgin cluster fiberfill retaining shape without sagging',
           ],
           materials: ['4-Way Soft Micro-Velvet', 'Sherpa & Flannel Fleece', '7D Virgin Cluster Polyfill', 'Faux Fur'],
-          image: 'https://images.unsplash.com/photo-1559454403-b8fb88521f11?auto=format&fit=crop&w=900&q=80',
+          image: '/src/assets/images/bvp_plush_cushions_mascot_1791819554630.jpg',
           iconName: 'Smile',
         },
         {
@@ -638,7 +650,7 @@ export const content = {
             'Tailored EVA sponge gift packaging with silk lining and matching paper gift bags',
           ],
           materials: ['Food-grade 304/316 Stainless Steel', 'Simili / Genuine Cowhide', 'Natural Bamboo', 'Artisan Hardboxes'],
-          image: 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=900&q=80',
+          image: '/src/assets/images/bvp_corporate_gift_sets_1791819566143.jpg',
           iconName: 'Gift',
         },
       ],
