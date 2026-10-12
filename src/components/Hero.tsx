@@ -2,6 +2,7 @@ import React from 'react';
 import { Language } from '../types';
 import { content } from '../translations';
 import { BVPLogo } from './BVPLogo';
+import { apparelImg, backpacksImg, plushImg, giftsImg } from '../assets/images';
 import {
   ArrowRight,
   ShieldCheck,
@@ -131,13 +132,12 @@ export const Hero: React.FC<HeroProps> = ({ currentLang, onOpenQuoteModal }) => 
                   </span>
                 </div>
 
-                {/* Imagery Grid of BVP Core Products with Local Generated High-Res Photos */}
+                {/* Imagery Grid of BVP Core Products with Bundled High-Res Photos */}
                 <div className="grid grid-cols-2 gap-3">
                   <div className="relative rounded-xl overflow-hidden aspect-[4/3] group border border-[#F5F1EA] bg-[#FAF8F5]">
                     <img
-                      src="/src/assets/images/bvp_apparel_production_1791819527723.jpg"
+                      src={apparelImg}
                       alt="May mặc & Đồng phục BVP"
-                      referrerPolicy="no-referrer"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#653814]/85 via-transparent to-transparent flex items-end p-2.5">
@@ -147,9 +147,8 @@ export const Hero: React.FC<HeroProps> = ({ currentLang, onOpenQuoteModal }) => 
 
                   <div className="relative rounded-xl overflow-hidden aspect-[4/3] group border border-[#F5F1EA] bg-[#FAF8F5]">
                     <img
-                      src="/src/assets/images/bvp_backpacks_manufacturing_1791819542614.jpg"
+                      src={backpacksImg}
                       alt="Balo & Túi xách BVP"
-                      referrerPolicy="no-referrer"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#653814]/85 via-transparent to-transparent flex items-end p-2.5">
@@ -159,9 +158,8 @@ export const Hero: React.FC<HeroProps> = ({ currentLang, onOpenQuoteModal }) => 
 
                   <div className="relative rounded-xl overflow-hidden aspect-[4/3] group border border-[#F5F1EA] bg-[#FAF8F5]">
                     <img
-                      src="/src/assets/images/bvp_plush_cushions_mascot_1791819554630.jpg"
+                      src={plushImg}
                       alt="Thú nhồi bông & Mascot BVP"
-                      referrerPolicy="no-referrer"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#653814]/85 via-transparent to-transparent flex items-end p-2.5">
@@ -171,9 +169,8 @@ export const Hero: React.FC<HeroProps> = ({ currentLang, onOpenQuoteModal }) => 
 
                   <div className="relative rounded-xl overflow-hidden aspect-[4/3] group border border-[#F5F1EA] bg-[#FAF8F5]">
                     <img
-                      src="/src/assets/images/bvp_corporate_gift_sets_1791819566143.jpg"
+                      src={giftsImg}
                       alt="Quà tặng doanh nghiệp BVP"
-                      referrerPolicy="no-referrer"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#653814]/85 via-transparent to-transparent flex items-end p-2.5">

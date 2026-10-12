@@ -1,3 +1,5 @@
+import { apparelImg, backpacksImg, plushImg, giftsImg } from './assets/images';
+
 export const content = {
   vi: {
     nav: {
@@ -89,7 +91,7 @@ export const content = {
             'Form dáng chuẩn xuất khẩu, may đo theo bảng size tiêu chuẩn doanh nghiệp',
           ],
           materials: ['Cotton 100%', 'Cá sấu CVC 4 chiều', 'Vải Coolmax', 'Kaki thun cao cấp'],
-          image: '/src/assets/images/bvp_apparel_production_1791819527723.jpg',
+          image: apparelImg,
           iconName: 'Shirt',
         },
         {
@@ -105,7 +107,7 @@ export const content = {
             'Thiết kế ngăn chống sốc chuyên dụng cho laptop và thiết bị số',
           ],
           materials: ['Vải Dù 900D/1680D trượt nước', 'Canvas bố tự nhiên', 'Vải không dệt', 'Da PU phối cao cấp'],
-          image: '/src/assets/images/bvp_backpacks_manufacturing_1791819542614.jpg',
+          image: backpacksImg,
           iconName: 'Briefcase',
         },
         {
@@ -121,7 +123,7 @@ export const content = {
             'Ruột bông trắng gòn 7D kháng khuẩn, định hình form bền lâu không xẹp lún',
           ],
           materials: ['Vải nhung lông mịn 4 chiều', 'Nỉ nhung tuyết', 'Bông gòn Bi 7D', 'Vải lông xoắn cao cấp'],
-          image: '/src/assets/images/bvp_plush_cushions_mascot_1791819554630.jpg',
+          image: plushImg,
           iconName: 'Smile',
         },
         {
@@ -137,7 +139,7 @@ export const content = {
             'Hộp quà tặng định hình bồi nhung, túi xách giấy đồng bộ cao cấp',
           ],
           materials: ['Inox 304/316 thực phẩm', 'Da Simili / Da bò thật', 'Tre trúc tự nhiên', 'Hộp xi mỹ thuật'],
-          image: '/src/assets/images/bvp_corporate_gift_sets_1791819566143.jpg',
+          image: giftsImg,
           iconName: 'Gift',
         },
       ],
@@ -602,7 +604,7 @@ export const content = {
             'Export-grade tailoring patterns tailored to enterprise sizing charts',
           ],
           materials: ['Cotton 100%', '4-Way CVC Pique', 'Coolmax Mesh', 'Premium Khaki Stretch'],
-          image: '/src/assets/images/bvp_apparel_production_1791819527723.jpg',
+          image: apparelImg,
           iconName: 'Shirt',
         },
         {
@@ -618,7 +620,7 @@ export const content = {
             'Custom internal padded compartments for laptops, tablets, and tech accessories',
           ],
           materials: ['900D/1680D Water-Repellent Nylon', 'Natural Cotton Canvas', 'Eco Non-Woven', 'Premium PU Leather'],
-          image: '/src/assets/images/bvp_backpacks_manufacturing_1791819542614.jpg',
+          image: backpacksImg,
           iconName: 'Briefcase',
         },
         {
@@ -634,7 +636,7 @@ export const content = {
             'Anti-bacterial 7D virgin cluster fiberfill retaining shape without sagging',
           ],
           materials: ['4-Way Soft Micro-Velvet', 'Sherpa & Flannel Fleece', '7D Virgin Cluster Polyfill', 'Faux Fur'],
-          image: '/src/assets/images/bvp_plush_cushions_mascot_1791819554630.jpg',
+          image: plushImg,
           iconName: 'Smile',
         },
         {
@@ -650,7 +652,7 @@ export const content = {
             'Tailored EVA sponge gift packaging with silk lining and matching paper gift bags',
           ],
           materials: ['Food-grade 304/316 Stainless Steel', 'Simili / Genuine Cowhide', 'Natural Bamboo', 'Artisan Hardboxes'],
-          image: '/src/assets/images/bvp_corporate_gift_sets_1791819566143.jpg',
+          image: giftsImg,
           iconName: 'Gift',
         },
       ],

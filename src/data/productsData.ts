@@ -1,10 +1,10 @@
 import { ProductItem } from '../types';
+import { apparelImg, backpacksImg, plushImg, giftsImg } from '../assets/images';
 
-// Local high-fidelity images generated for BVP product lines
-const APPAREL_IMG = '/src/assets/images/bvp_apparel_production_1791819527723.jpg';
-const BAGS_IMG = '/src/assets/images/bvp_backpacks_manufacturing_1791819542614.jpg';
-const PLUSH_IMG = '/src/assets/images/bvp_plush_cushions_mascot_1791819554630.jpg';
-const GIFTS_IMG = '/src/assets/images/bvp_corporate_gift_sets_1791819566143.jpg';
+const APPAREL_IMG = apparelImg;
+const BAGS_IMG = backpacksImg;
+const PLUSH_IMG = plushImg;
+const GIFTS_IMG = giftsImg;
 
 export const productsData: ProductItem[] = [
   // Apparel & Uniforms
