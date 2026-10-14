@@ -355,14 +355,6 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                   </div>
                 </div>
               </div>
-
-              {/* SLA Response Guarantee */}
-              <div className="p-4 rounded-2xl bg-[#4A260B] border border-[#dec357]/50 text-[#F5F1EA] text-xs">
-                <span className="font-bold text-[#f7e476] block mb-1">
-                  ⚡ Cam Kết Phản Hồi Trong 30 Phút:
-                </span>
-                Nhận maket thiết kế mẫu 2D/3D và bảng báo giá chi tiết ngay trong ngày làm việc.
-              </div>
             </div>
           </div>
         </div>

@@ -182,7 +182,7 @@ export const content = {
           title: 'Chuyên Nghiệp',
           enTitle: 'Professionalism',
           description:
-            'Quy trình làm việc minh bạch, báo giá nhanh chóng trong 30 phút, may mẫu chuẩn xác và cam kết tiến độ giao hàng đúng hẹn 100%.',
+            'Quy trình làm việc minh bạch, báo giá nhanh chóng, may mẫu chuẩn xác và cam kết tiến độ giao hàng đúng hẹn 100%.',
           iconName: 'ShieldCheck',
         },
         {
@@ -432,18 +432,18 @@ export const content = {
       sectionBadge: 'KẾT NỐI VỚI BVP',
       title: 'Gửi Yêu Cầu Tư Vấn & Nhận Báo Giá',
       subtitle:
-        'Đội ngũ BVP sẽ phản hồi kèm bản maket thiết kế và bảng báo giá chi tiết trong vòng 30 phút làm việc.',
+        'Đội ngũ BVP sẽ phản hồi kèm bản maket thiết kế và bảng báo giá chi tiết trong thời gian sớm nhất.',
       infoTitle: 'Thông Tin Liên Hệ Trực Tiếp',
       companyFullName: 'CÔNG TY TNHH THƯƠNG MẠI & SẢN XUẤT BVP',
       companyEnName: 'BVP TRADING & MANUFACTURING CO., LTD',
       addressTitle: 'Địa chỉ văn phòng & xưởng sản xuất:',
       addressValue: 'Quận Tân Bình / Tân Phú, TP. Hồ Chí Minh, Việt Nam',
-      hotlineTitle: 'Hotline / Zalo tư vấn 24/7:',
+      hotlineTitle: 'Hotline / Zalo tư vấn:',
       hotlineValue: '0909 388 926 - 0938 123 456',
       emailTitle: 'Email báo giá dự án:',
       emailValue: 'contact@bvp.vn / sales@bvp.vn',
       workingTimeTitle: 'Giờ làm việc:',
-      workingTimeValue: 'Thứ 2 - Thứ 7: 08:00 - 18:00 (Hỗ trợ Zalo ngoài giờ)',
+      workingTimeValue: 'Thứ 2 - Thứ 7: 08:00 - 18:00',
       form: {
         fullName: 'Họ và tên người liên hệ *',
         fullNamePlaceholder: 'Ví dụ: Nguyễn Văn An',
@@ -480,7 +480,7 @@ export const content = {
         gratitudeMessage:
           'BVP Trading & Manufacturing Co., Ltd chân thành cảm ơn Quý khách hàng đã tin tưởng lựa chọn và đồng hành cùng chúng tôi trong giai đoạn khởi đầu và chặng đường phát triển dài hạn.',
         nextSteps:
-          'Chuyên viên phụ trách dự án của BVP sẽ chủ động liên hệ qua Số điện thoại / Zalo trong vòng 30 phút để trao đổi maket thiết kế và gửi bảng báo giá tối ưu nhất.',
+          'Chuyên viên phụ trách dự án của BVP sẽ chủ động liên hệ qua Số điện thoại / Zalo để trao đổi maket thiết kế và gửi bảng báo giá tối ưu nhất.',
         closeBtn: 'Đóng & Tiếp tục xem sản phẩm',
       },
       faqTitle: 'Câu Hỏi Thường Gặp (FAQ)',
@@ -695,7 +695,7 @@ export const content = {
           title: 'Professionalism',
           enTitle: 'Chuyên Nghiệp',
           description:
-            'Transparent workflows, quotation turnaround within 30 minutes, accurate physical sampling, and 100% adherence to agreed delivery milestones.',
+            'Transparent workflows, swift quotation turnaround, accurate physical sampling, and 100% adherence to agreed delivery milestones.',
           iconName: 'ShieldCheck',
         },
         {
@@ -945,24 +945,24 @@ export const content = {
       sectionBadge: 'GET IN TOUCH',
       title: 'Request Consultation & Official Quotation',
       subtitle:
-        'Our project specialists will respond with comprehensive 2D/3D mockups and a detailed price breakdown within 30 business minutes.',
+        'Our project specialists will respond with comprehensive 2D/3D mockups and a detailed price breakdown promptly.',
       infoTitle: 'Direct Corporate Contact',
       companyFullName: 'BVP TRADING & MANUFACTURING CO., LTD',
       companyEnName: 'CÔNG TY TNHH THƯƠNG MẠI & SẢN XUẤT BVP',
       addressTitle: 'Head Office & Manufacturing Hub:',
       addressValue: 'Tan Binh / Tan Phu District, Ho Chi Minh City, Vietnam',
-      hotlineTitle: 'Hotline / WhatsApp / Zalo 24/7:',
+      hotlineTitle: 'Hotline / Zalo:',
       hotlineValue: '(+84) 909 388 926 - (+84) 938 123 456',
       emailTitle: 'Project Quotations:',
       emailValue: 'contact@bvp.vn / sales@bvp.vn',
       workingTimeTitle: 'Working Hours:',
-      workingTimeValue: 'Mon - Sat: 08:00 - 18:00 (After-hours Zalo support available)',
+      workingTimeValue: 'Mon - Sat: 08:00 - 18:00',
       form: {
         fullName: 'Contact Person Full Name *',
         fullNamePlaceholder: 'e.g. David Nguyen',
         company: 'Company / Organization Name *',
         companyPlaceholder: 'e.g. Unilever Vietnam Corporation',
-        phone: 'Phone / WhatsApp / Zalo *',
+        phone: 'Phone / Zalo *',
         phonePlaceholder: 'e.g. (+84) 909 123 456',
         email: 'Corporate Email Address *',
         emailPlaceholder: 'e.g. david.nguyen@company.com',
@@ -993,7 +993,7 @@ export const content = {
         gratitudeMessage:
           'BVP Trading & Manufacturing Co., Ltd sincerely thanks our valued clients for placing trust in us during our foundational growth and long-term developmental journey.',
         nextSteps:
-          'Your dedicated account specialist will reach out via Phone / Zalo / Email within 30 minutes to review design mockups and present the most optimized quotation.',
+          'Your dedicated account specialist will reach out via Phone / Zalo / Email to review design mockups and present the most optimized quotation.',
         closeBtn: 'Close & Continue Exploring',
       },
       faqTitle: 'Frequently Asked Questions (FAQ)',

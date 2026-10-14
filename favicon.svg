@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bvp-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2a1405" />
+      <stop offset="100%" stop-color="#653814" />
+    </linearGradient>
+    <linearGradient id="bvp-border" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f7e476" />
+      <stop offset="50%" stop-color="#dec357" />
+      <stop offset="100%" stop-color="#9b6b2a" />
+    </linearGradient>
+    <linearGradient id="bvp-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8f18c" />
+      <stop offset="25%" stop-color="#f7e476" />
+      <stop offset="55%" stop-color="#dec357" />
+      <stop offset="80%" stop-color="#bb8b2c" />
+      <stop offset="100%" stop-color="#865421" />
+    </linearGradient>
+    <linearGradient id="bvp-sun" x1="30%" y1="0%" x2="70%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="20%" stop-color="#f8f18c" />
+      <stop offset="60%" stop-color="#dec357" />
+      <stop offset="100%" stop-color="#9b6b2a" />
+    </linearGradient>
+    <linearGradient id="bvp-bronze" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#865421" />
+      <stop offset="50%" stop-color="#bb8b2c" />
+      <stop offset="100%" stop-color="#653814" />
+    </linearGradient>
+  </defs>
+
+  <!-- Luxury Chocolate Badge Container with Golden Stroke -->
+  <rect x="6" y="6" width="188" height="188" rx="42" fill="url(#bvp-bg)" stroke="url(#bvp-border)" stroke-width="4" />
+
+  <!-- BVP Wing Emblem -->
+  <g transform="translate(0, -5)">
+    <!-- Top V Wing Symbol -->
+    <path d="M 28 32 L 100 84 L 172 32 L 172 64 L 100 116 L 28 64 Z" fill="url(#bvp-sun)" />
+
+    <!-- Left Wing - B Bars -->
+    <path d="M 28 76 L 86 118 L 86 138 L 28 96 Z" fill="url(#bvp-gold)" />
+    <path d="M 28 108 L 86 150 L 86 170 L 28 128 Z" fill="url(#bvp-gold)" />
+    <path d="M 28 140 L 86 182 L 96 174 L 96 156 L 38 114 Z" fill="url(#bvp-bronze)" />
+
+    <!-- Central Spine -->
+    <path d="M 96 122 L 104 122 L 104 186 L 96 186 Z" fill="url(#bvp-sun)" />
+
+    <!-- Right Wing - P Loop -->
+    <path d="M 114 122 L 172 80 L 172 132 L 128 164 L 128 144 L 152 126 L 152 106 L 114 134 Z" fill="url(#bvp-sun)" />
+    <path d="M 104 148 L 122 134 L 122 178 L 104 186 Z" fill="url(#bvp-gold)" />
+  </g>
+</svg>
